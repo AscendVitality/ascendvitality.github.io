@@ -1,11 +1,20 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AscendVitality</title>
     <style>
-        /* Minimal, clean design */
+        :root {
+            /* Golden ratio */
+            --phi: 1.618034;
+            /* Quaternary colors representing elements */
+            --earth: #2c2c2c;
+            --water: #f5f5f5;
+            --air: #ffffff;
+            --fire: #1a1a1a;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,75 +23,100 @@
 
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 1200px;
+            line-height: var(--phi);
+            color: var(--earth);
+            max-width: calc(700px * var(--phi));
             margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #ffffff;
+            padding: calc(20px * var(--phi)) 20px;
+            background-color: var(--air);
         }
 
         header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: calc(40px * var(--phi));
+            position: relative;
+        }
+
+        /* Subtle geometric pattern */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent calc(50% - 1px), var(--water) 50%, transparent calc(50% + 1px));
+            background-size: calc(20px * var(--phi)) calc(20px * var(--phi));
+            opacity: 0.1;
+            pointer-events: none;
         }
 
         h1 {
             font-weight: 300;
-            font-size: 2.4rem;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            color: #1a1a1a;
+            font-size: calc(1.5rem * var(--phi));
+            letter-spacing: calc(1px * var(--phi));
+            margin-bottom: calc(20px * var(--phi));
+            color: var(--fire);
         }
 
         nav {
-            margin: 30px 0;
+            margin: calc(30px * var(--phi)) 0;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: calc(25px * var(--phi));
         }
 
         nav a {
             text-decoration: none;
-            color: #555;
+            color: var(--earth);
             font-weight: 300;
             letter-spacing: 0.5px;
             transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: #000;
+            color: var(--fire);
         }
 
         .content {
-            max-width: 800px;
+            max-width: calc(500px * var(--phi));
             margin: 0 auto;
             text-align: center;
         }
 
         .intro {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 40px;
+            font-size: calc(1rem * var(--phi));
+            line-height: var(--phi);
+            color: var(--earth);
+            margin-bottom: calc(25px * var(--phi));
+        }
+
+        /* Quaternary grid for content */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: calc(20px * var(--phi));
+            margin-top: calc(40px * var(--phi));
         }
 
         footer {
-            margin-top: 80px;
+            margin-top: calc(50px * var(--phi));
             text-align: center;
-            color: #888;
-            font-size: 0.9rem;
+            color: var(--earth);
+            opacity: 0.7;
+            font-size: calc(0.8rem * var(--phi));
         }
 
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
                 align-items: center;
-                gap: 20px;
+                gap: calc(15px * var(--phi));
             }
         }
     </style>
@@ -92,17 +126,22 @@
         <h1>ASCENDVITALITY</h1>
         <nav>
             <ul>
-                <li><a href="#insights">Insights</a></li>
-                <li><a href="#resources">Resources</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#earth">Practice</a></li>
+                <li><a href="#water">Reflect</a></li>
+                <li><a href="#air">Learn</a></li>
+                <li><a href="#fire">Transform</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="content">
         <p class="intro">
-            Guiding your journey through mindful living and personal transformation.
+            Exploring the pathways of inner transformation.
         </p>
+        
+        <div class="grid">
+            <!-- Grid will be populated with content that subtly reflects quaternary nature -->
+        </div>
     </main>
 
     <footer>
